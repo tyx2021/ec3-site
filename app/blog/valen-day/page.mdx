@@ -52,3 +52,24 @@ Note how we can consider the operation that does the simplified problem as a dat
 using DnC. This method is very classic and is left as a problem for the reader.
 
 Time complexity: $Q log{Q}(log{Q} + log{X})$
+
+# motest
+
+## Abridged problem statement
+
+Find the maximum value of $K$ such that $X^K$ divides $$\sum_{i=0}^{N}A^i$$ $X$ is odd, and $X$ divides $A-1$
+
+## LTE Lemma
+
+Let $v_k(x)$ denote the maximum $L$ such that $k^L$ divides $x$. Note $v_p(ab)=v_p(a)+v_p(b)$.
+
+We will now state a lemma(without proof, but the proof isn't too hard):
+
+Let $p$ be an odd prime. If $p$ does not divide integers $a$,$b$, and $p$ divides $a-b$. Let $N$ be any positive integer. Then, $$v_p\left( a^N-b^N \right)=v_p(a-b)+v_p(N)$$
+
+## Solution
+
+Notice that $$\sum_{i=0}^{N}A^i=\frac{A^{N+1}-1}{A-1}$$ Hence, $$v_p\left(\sum_{i=0}^{N}A^i\right)=v_p\left(A^{N+1}-1\right)-v_p(A-1)=v_p(A-1)+v_p(N+1)-v_p(A-1)=v_p(N+1)$$ for all $p$. 
+
+Hence we may conclude $v_X(1+A+A^2+\dots+A^N)=v_X(N+1)$.
+
