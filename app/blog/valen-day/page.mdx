@@ -52,3 +52,20 @@ Note how we can consider the operation that does the simplified problem as a dat
 using DnC. This method is very classic and is left as a problem for the reader.
 
 Time complexity: $Q log{Q}(log{Q} + log{X})$
+
+# motest
+
+## LTE Lemma
+
+Define $v_p(X)$ to be the maximum value $K$ such that $p^K$ divides $X$. Then,
+
+$v_p(A^N-1)=v_p(A-1)+v_p(N)$ if $p\neq2$ and prime $p$ divides $A-1$(special case of LTE). 
+
+## Solution
+
+Notice that $v_p(1+A+A^2+...+A^N)=v_p(A^{N+1}-1)-v_p(A-1)=v_p(A-1)+v_p(N+1)-v_p(A-1)=v_p(N+1)$. Hence for all primes $p$,$v_p(1+A+A^2+...+A^N)=v_p(N+1)$. Hence we may also conclude that for non primes $X$, $v_X(1+A+A^2+...+A^N)=v_X(N+1)$.
+
+## Faster solution
+
+Figure out how to do the above faster than $Nlog{N}$
+
